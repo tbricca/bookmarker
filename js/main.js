@@ -11,7 +11,12 @@ function saveBookmark(e) {
     url: siteUrl
   };
 
-  console.log(bookmark);
+  // LOCAL storage only stores STRINGS
+  // Local storage test
+  localStorage.setItem("test", "Hello World");
+  console.log(localStorage.getItem("test"));
+
+  //   console.log(bookmark);
   // prevent form from submitting
   e.preventDefault();
 }

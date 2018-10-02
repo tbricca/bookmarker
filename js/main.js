@@ -13,10 +13,22 @@ function saveBookmark(e) {
 
   // LOCAL storage only stores STRINGS
   // Local storage test
-  localStorage.setItem("test", "Hello World");
-  console.log(localStorage.getItem("test"));
 
-  //   console.log(bookmark);
+  //   localStorage.setItem("test", "Hello World");
+  //   console.log(localStorage.getItem("test"));
+  //   localStorage.removeItem("test");
+  //   console.log(localStorage.getItem("test"));
+
+  // TEST if bookmarks is null
+  if (localStorage.getItem("bookmarks") === null) {
+    // Init array if bookmark does not already exist
+    var bookmarks = [];
+
+    booksmarks.push(bookmark);
+    // Set to LocalStorage
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  }
+
   // prevent form from submitting
   e.preventDefault();
 }

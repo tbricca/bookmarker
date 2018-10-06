@@ -40,3 +40,8 @@ function saveBookmark(e) {
   // prevent form from submitting
   e.preventDefault();
 }
+
+function fetchBookmarks() {
+  var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+  console.log(bookmarks);
+}

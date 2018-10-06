@@ -53,6 +53,7 @@ function fetchBookmarks() {
     var url = bookmarks[i].url;
 
     /// Append to it = +=
-    bookmarksResults.innerHTML += name;
+    bookmarksResults.innerHTML +=
+      '<div class="well">' + "<h3>" + name + "</h3>" + "</div>";
   }
 }

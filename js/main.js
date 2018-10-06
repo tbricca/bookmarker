@@ -41,6 +41,11 @@ function saveBookmark(e) {
   e.preventDefault();
 }
 
+// Delete Bookmark
+function deleteBookmark(url) {
+  console.log(url);
+}
+
 function fetchBookmarks() {
   var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
   // Get Output id
@@ -57,12 +62,12 @@ function fetchBookmarks() {
       '<div class="well">' +
       "<h3>" +
       name +
-      '<a class="btn btn-default" target="_blank" href="' +
+      ' <a class="btn btn-default" target="_blank" href="' +
       url +
-      '">Visit</a>' +
+      '">Visit</a> ' +
       "<a onclick= \"deleteBookmark('" +
       url +
-      '\')" class="btn btn-default" target="_blank" href="a">Delete</a>';
+      '\')" class="btn btn-danger" href="#">Delete</a>';
     "</h3>" + "</div>";
   }
 }

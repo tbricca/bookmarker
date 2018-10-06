@@ -28,6 +28,13 @@ function saveBookmark(e) {
     bookmarks.push(bookmark);
     // Set to LocalStorage
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  } else {
+    // Get bookmarks from local storage to check if it already exists
+    var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+    // Add bookmark to array
+    bookmarks.push(bookmark);
+    // Re-set back to local storage
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
   }
 
   // prevent form from submitting

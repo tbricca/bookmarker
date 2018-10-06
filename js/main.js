@@ -23,8 +23,9 @@ function saveBookmark(e) {
   if (localStorage.getItem("bookmarks") === null) {
     // Init array if bookmark does not already exist
     var bookmarks = [];
+    // console.log('here')
 
-    booksmarks.push(bookmark);
+    bookmarks.push(bookmark);
     // Set to LocalStorage
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
   }

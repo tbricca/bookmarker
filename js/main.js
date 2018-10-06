@@ -43,5 +43,16 @@ function saveBookmark(e) {
 
 function fetchBookmarks() {
   var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
-  console.log(bookmarks);
+  // Get Output id
+
+  var bookmarksResults = document.getElementById("bookmarksResults");
+  // Build Output
+  bookmarksResults.innerHTML = "";
+  for (var i = 0; i < bookmarks.length; i++) {
+    var name = bookmarks[i].name;
+    var url = bookmarks[i].url;
+
+    /// Append to it = +=
+    bookmarksResults.innerHTML += name;
+  }
 }

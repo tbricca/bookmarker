@@ -6,9 +6,7 @@ function saveBookmark(e) {
   var siteName = document.getElementById("siteName").value;
   var siteUrl = document.getElementById("siteUrl").value;
 
-  // Prevent from submitting a blank form
-  if (!siteName || !siteUrl) {
-    alert("Please fill in the form, ya Wise Guy");
+  if (!validateForm(siteName, siteUrl)) {
     return false;
   }
   var bookmark = {
@@ -33,13 +31,17 @@ function saveBookmark(e) {
     // Re-set back to local storage
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
   }
+
+  // CLEAR FORM
+  document.getElementById("myForm").reset();
+
   // Re-Fetch Bookmarks
   fetchBookmarks();
   // prevent form from submitting
   e.preventDefault();
 }
 
-// Delete Bookmark
+// DELETE BOOKMARK -----------
 function deleteBookmark(url) {
   var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
   //Loop through bookmarks
@@ -80,4 +82,22 @@ function fetchBookmarks() {
       '\')" class="btn btn-danger" href="#">Delete</a>';
     "</h3>" + "</div>";
   }
+}
+
+function validateForm(siteName, siteUrl) {
+  // Prevent from submitting a blank form
+  if (!siteName || !siteUrl) {
+    alert("Please fill in the form, ya Wise Guy");
+    return false;
+  }
+  // Expression for the format of a URL
+  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+  var regex = new RegExp(expression);
+
+  if (!siteUrl.match(regex)) {
+    alert("Please use a valid URL, I believe in you!!!");
+    return false;
+  }
+
+  return true;
 }

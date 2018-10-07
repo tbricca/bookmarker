@@ -71,15 +71,15 @@ function fetchBookmarks() {
 
     /// Append to it = +=
     bookmarksResults.innerHTML +=
-      '<div class="well">' +
+      '<div class="card bg-light text-dark car-body">' +
       "<h3>" +
       name +
-      ' <a class="btn btn-default" target="_blank" href="' +
+      ' <a class="btn btn-default btn-align" target="_blank" href="' +
       url +
       '">Visit</a> ' +
       "<a onclick= \"deleteBookmark('" +
       url +
-      '\')" class="btn btn-danger" href="#">Delete</a>';
+      '\')" class="btn btn-danger btn-align" href="#">Delete</a>';
     "</h3>" + "</div>";
   }
 }

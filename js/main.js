@@ -43,7 +43,16 @@ function saveBookmark(e) {
 
 // Delete Bookmark
 function deleteBookmark(url) {
-  console.log(url);
+  var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+  //Loop through bookmarks
+  for (var i = 0; i < bookmarks.length; i++) {
+    if (bookmarks[i].url == url) {
+      // Remove from array
+      bookmarks.splice(i, 1);
+    }
+  }
+  // Re-set back to LocalStorage
+  localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 }
 
 function fetchBookmarks() {

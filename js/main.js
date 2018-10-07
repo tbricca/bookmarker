@@ -36,7 +36,8 @@ function saveBookmark(e) {
     // Re-set back to local storage
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
   }
-
+  // Re-Fetch Bookmarks
+  fetchBookmarks();
   // prevent form from submitting
   e.preventDefault();
 }
@@ -53,6 +54,9 @@ function deleteBookmark(url) {
   }
   // Re-set back to LocalStorage
   localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+
+  // Re-Fetch Bookmarks
+  fetchBookmarks();
 }
 
 function fetchBookmarks() {

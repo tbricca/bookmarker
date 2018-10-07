@@ -74,7 +74,7 @@ function fetchBookmarks() {
       '<div class="card bg-light text-dark car-body">' +
       "<h3>" +
       name +
-      ' <a class="btn btn-default btn-align" target="_blank" href="' +
+      ' <a class="btn btn-primary btn-align" target="_blank" href="' +
       url +
       '">Visit</a> ' +
       "<a onclick= \"deleteBookmark('" +

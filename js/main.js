@@ -6,18 +6,15 @@ function saveBookmark(e) {
   var siteName = document.getElementById("siteName").value;
   var siteUrl = document.getElementById("siteUrl").value;
 
+  // Prevent from submitting a blank form
+  if (!siteName || !siteUrl) {
+    alert("Please fill in the form, ya Wise Guy");
+    return false;
+  }
   var bookmark = {
     name: siteName,
     url: siteUrl
   };
-
-  // LOCAL storage only stores STRINGS
-  // Local storage test
-
-  //   localStorage.setItem("test", "Hello World");
-  //   console.log(localStorage.getItem("test"));
-  //   localStorage.removeItem("test");
-  //   console.log(localStorage.getItem("test"));
 
   // TEST if bookmarks is null
   if (localStorage.getItem("bookmarks") === null) {
